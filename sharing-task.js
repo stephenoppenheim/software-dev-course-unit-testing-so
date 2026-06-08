@@ -6,8 +6,7 @@ function calculateDiscount(price, discountRate) {
 
 function filterProducts(products, callback) {
     if (!Array.isArray(products) || typeof callback !== 'function') return [];
-    // TODO: Implement filtering logic
-    return [];
+    return products.filter(callback);
 }
 
 function sortInventory(inventory, key) {
@@ -16,4 +15,27 @@ function sortInventory(inventory, key) {
     return [];
 }
 
-module.exports = { calculateDiscount, filterProducts, sortInventory };
+const testProducts = [
+    {
+        name: "sledge hammer",
+        type: "hammer",
+        cost: 10
+    },
+    {
+        name: "hammer",
+        type: "hammer",
+        cost: 5
+    },
+    {
+        name: "door hinge",
+        type: "hardware",
+        cost: 3
+    },
+    {
+        name: "door knob",
+        type: "hardware",
+        cost: 4
+    }
+]
+
+module.exports = { calculateDiscount, filterProducts, sortInventory, testProducts };

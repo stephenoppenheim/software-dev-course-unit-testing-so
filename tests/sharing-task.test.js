@@ -1,4 +1,4 @@
-const { calculateDiscount, filterProducts, sortInventory } = require("../sharing-task.js");
+const { calculateDiscount, filterProducts, sortInventory, testProducts } = require("../sharing-task.js");
 
 describe("calculateDiscount", () => {
 
@@ -32,5 +32,28 @@ describe("calculateDiscount", () => {
 
     test("handles edge case with price of 0", () => {
         expect(calculateDiscount(0, 0.1)).toBe(0);
+    });
+})
+
+describe("filterProducts", () => {
+
+    test("returns empty array if products is not an array", () => {
+        expect(filterProducts("100", (product) => product.type === "hardware")).toEqual([]);
+    });
+
+    test("returns empty array if callback is not a function", () => {
+        expect(filterProducts(testProducts, "function")).toEqual([]);
+    });
+
+    test("returns empty array if callback is missing", () => {
+        expect(filterProducts(testProducts)).toEqual([]);
+    });
+
+    test("returns empty array if no arguments are passed", () => {
+        expect(filterProducts()).toEqual([]);
+    });
+
+    test("returns array of all hardware items", () => {
+        expect(filterProducts(testProducts, (product) => product.type === "hardware")).toEqual([{name: "door hinge",type: "hardware",cost: 3},{name: "door knob",type: "hardware",cost: 4}]);
     });
 })
