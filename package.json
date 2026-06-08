@@ -1,0 +1,24 @@
+{
+  "name": "software-dev-course-unit-testing-so",
+  "version": "1.0.0",
+  "description": "This is the README.md file! I, as the presenter, will fill it with content!",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenoppenheim/software-dev-course-unit-testing-so.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/stephenoppenheim/software-dev-course-unit-testing-so/issues"
+  },
+  "homepage": "https://github.com/stephenoppenheim/software-dev-course-unit-testing-so#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
